@@ -1,0 +1,14 @@
+<h2>South Indian Movies</h2>
+
+<div class="movies-container">
+  <div class="movie-card" *ngFor="let movie of movies">
+    <img [src]="movie.image" alt="movie image" *ngIf="movie.image" />
+    <h3>{{ movie.title }}</h3>
+    <p><strong>Release:</strong> {{ movie.release_year | date }}</p>
+    <p>{{ movie.description }}</p>
+
+    <div class="tags">
+      <span *ngFor="let g of movie.genres">{{ g }}</span>
+    </div>
+  </div>
+</div>

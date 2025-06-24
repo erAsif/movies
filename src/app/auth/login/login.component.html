@@ -1,0 +1,14 @@
+<div class="form-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <input formControlName="username" placeholder="Username" />
+      <input formControlName="password" type="password" placeholder="Password" />
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <p class="success" *ngIf="message">{{ message }}</p>
+  
+    <!-- Register Redirect Button -->
+    <p>Don't have an account? 
+      <button (click)="goToRegister()" class="register-btn">Register</button>
+    </p>
+  </div>

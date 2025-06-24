@@ -1,0 +1,15 @@
+<aside class="sidebar">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/hindimovie" routerLinkActive="active">Hindi Movie</a></li>
+      <li><a routerLink="/englishmovie" routerLinkActive="active">English Movie</a></li>
+      <li><a routerLink="/southmovie" routerLinkActive="active">South Movie</a></li>
+      <li><a routerLink="/chinesemovie" routerLinkActive="active">Chinese Movie</a></li>
+      <li><a routerLink="/hindidubbedmovie" routerLinkActive="active">Hindi Dubbed Movie</a></li>
+  
+      <!-- 👇 Only show Add Movie if user is Django superuser -->
+      <li *ngIf="superuser">
+        <a routerLink="/addmovie" routerLinkActive="active">Add Movie</a>
+      </li>
+    </ul>
+  </aside>

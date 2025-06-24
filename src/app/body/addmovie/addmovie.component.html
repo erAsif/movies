@@ -1,0 +1,36 @@
+<h2>Add Movie</h2>
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <label>Title:</label>
+  <input type="text" formControlName="title" />
+
+  <label>Description:</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Release Date:</label>
+  <input type="date" formControlName="release_year" />
+
+  <label>Genres:</label>
+  <select multiple formControlName="genres">
+    <option *ngFor="let g of genres" [value]="g.id">{{ g.name }}</option>
+  </select>
+
+  <label>Languages:</label>
+  <select multiple formControlName="languages">
+    <option *ngFor="let l of languages" [value]="l.id">{{ l.name }}</option>
+  </select>
+
+  <label>Countries:</label>
+  <select multiple formControlName="countries">
+    <option *ngFor="let c of countries" [value]="c.id">{{ c.name }}</option>
+  </select>
+
+  <label>Industries:</label>
+  <select multiple formControlName="industries">
+    <option *ngFor="let i of industries" [value]="i.id">{{ i.name }}</option>
+  </select>
+
+  <label>Image:</label>
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <button type="submit">Add Movie</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="form-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+      <input formControlName="userName" placeholder="Username" />
+      <input formControlName="email" type="email" placeholder="Email" />
+      <input formControlName="mobileNo" placeholder="Mobile Number" />
+      <input formControlName="password" type="password" placeholder="Password" />
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p class="success" *ngIf="message">{{ message }}</p>
+
+
+    <p>you have an account. 
+        <button (click)="goToLogin()" class="register-btn">Login</button>
+      </p>
+  </div>
+  
